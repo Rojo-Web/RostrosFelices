@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using RostrosFelices.Data;
 using RostrosFelices.Modelos;
 
-namespace RostrosFelices.Pages.Empleadoss
+namespace RostrosFelices.Pages.Clientess
 {
     [Authorize]
     public class EditModel : PageModel
@@ -19,22 +19,22 @@ namespace RostrosFelices.Pages.Empleadoss
 
         [BindProperty]
 
-        public Empleado Users { get; set; }
+        public Cliente clientes { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Empleados == null)
+            if (id == null || _context.Clientes == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Empleados.FirstOrDefaultAsync(m => m.Id == id);
-            if (user == null)
+            var cliente = await _context.Clientes.FirstOrDefaultAsync(m => m.id == id);
+            if (cliente == null)
             {
                 return NotFound();
             }
 
-            Users = user;
+            clientes = cliente;
             return Page();
         }
 
@@ -45,7 +45,7 @@ namespace RostrosFelices.Pages.Empleadoss
                 return Page();
             }
 
-            _context.Attach(Users).State = EntityState.Modified;
+            _context.Attach(clientes).State = EntityState.Modified;
 
             try
             {
@@ -53,7 +53,7 @@ namespace RostrosFelices.Pages.Empleadoss
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!UsersExists(Users.Id))
+                if (!UsersExists(clientes.id))
                 {
                     return NotFound();
                 }
@@ -66,7 +66,7 @@ namespace RostrosFelices.Pages.Empleadoss
         }
         private bool UsersExists(int id)
         {
-            return (_context.Empleados?.Any(e => e.Id == id)).GetValueOrDefault();
+            return (_context.Clientes?.Any(e => e.id == id)).GetValueOrDefault();
         }
     }
 }

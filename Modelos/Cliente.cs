@@ -8,7 +8,7 @@ namespace RostrosFelices.Modelos
 
         [Required]
         public string Nombre { get; set; }
-        public string celular { get; set; }
+        
         
     }
 }

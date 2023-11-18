@@ -1,4 +1,39 @@
 ﻿@page
 @model RostrosFelices.Pages.Clientess.IndexModel
 @{
+    ViewData["Title"] = "Index Empleados";
 }
+
+<h1>Index Empleados</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.clientes[0].id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.clientes[0].Nombre)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.clientes)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.id" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.id" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

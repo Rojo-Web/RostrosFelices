@@ -12,8 +12,8 @@ using RostrosFelices.Data;
 namespace RostrosFelices.Migrations
 {
     [DbContext(typeof(RostrosFelicesContext))]
-    [Migration("20231118223101_migracion3")]
-    partial class migracion3
+    [Migration("20231118233407_migracion78")]
+    partial class migracion78
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,10 +34,6 @@ namespace RostrosFelices.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("id"));
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("celular")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 

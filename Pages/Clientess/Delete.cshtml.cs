@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using RostrosFelices.Data;
 using RostrosFelices.Modelos;
 
-namespace RostrosFelices.Pages.Empleadoss
+namespace RostrosFelices.Pages.Clientess
 {
     [Authorize]
     public class DeleteModel : PageModel
@@ -17,24 +17,24 @@ namespace RostrosFelices.Pages.Empleadoss
             _context = context;
         }
         [BindProperty]
-        public Empleado Users { get; set; } = default;
+        public Cliente Cliente { get; set; } = default;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
-            if (id == null || _context.Empleados == null)
+            if (id == null || _context.Clientes == null)
             {
                 return NotFound();
 
             }
-            var user = await _context.Empleados.FirstOrDefaultAsync(m => m.Id == id);
+            var cliente = await _context.Clientes.FirstOrDefaultAsync(m => m.id == id);
 
-            if (user == null)
+            if (cliente == null)
             {
                 return NotFound();
             }
             else
             {
-                Users = user;
+                Cliente = cliente;
 
             }
             return Page();
@@ -43,16 +43,16 @@ namespace RostrosFelices.Pages.Empleadoss
 
         public async Task<IActionResult> OnPostAsync(int? id)
         {
-            if (id == null || _context.Empleados == null)
+            if (id == null || _context.Clientes == null)
             {
                 return NotFound();
             }
-            var user = await _context.Empleados.FindAsync(id);
+            var cliente = await _context.Clientes.FindAsync(id);
 
-            if (user != null)
+            if (cliente != null)
             {
-                Users = user;
-                _context.Empleados.Remove(user);
+                Cliente = cliente;
+                _context.Clientes.Remove(cliente);
                 await _context.SaveChangesAsync();
             }
             return RedirectToPage("./Index");
