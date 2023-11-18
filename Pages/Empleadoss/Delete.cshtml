@@ -1,0 +1,37 @@
+﻿@page
+@model RostrosFelices.Pages.Empleadoss.DeleteModel
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>¿Deseas eleminar?</h3>
+
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Nombre)
+        </dt>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Nombre)
+        </dt>
+        <dd class="col-ms-10">
+            @Html.DisplayFor(model => model.Users.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Users.Password)
+        </dt>
+        <dd class="col-ms-10">
+            @Html.DisplayFor(model => model.Users.Password)
+        </dd>
+
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for="Users.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-asp-page="./Index" class="btn btn-primary">Back to list</a>
+    </form>
+</div>
