@@ -56,7 +56,6 @@ namespace RostrosFelices.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -91,9 +90,6 @@ namespace RostrosFelices.Migrations
 
                     b.Property<DateTime>("fecha")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("id_cliente")
-                        .HasColumnType("int");
 
                     b.Property<int>("id_empleado")
                         .HasColumnType("int");

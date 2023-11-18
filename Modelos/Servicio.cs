@@ -11,7 +11,7 @@ namespace RostrosFelices.Modelos
         public int id_empleado { get; set; }
         public string empleado { get; set; }
 
-        public int id_cliente { get; set; }
+        //public int id_cliente { get; set; }
         public string cliente { get; set; }
         public string servicio { get; set; }
 

@@ -1,6 +1,8 @@
 using Microsoft.EntityFrameworkCore;
 using RostrosFelices.Data;
 
+
+
 namespace RostrosFelices
 {
     public class Program
@@ -13,11 +15,11 @@ namespace RostrosFelices
             builder.Services.AddRazorPages();
 
             //Agregamos el servicio para las cookies
-            /*builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
             {
                 options.Cookie.Name = "MyCookieAuth";
                 options.LoginPath = "/Account/Login"; //Si no esta autenticando, cargue la pagina login
-            });*/
+            });
 
             //Agregando el contexto SupermarketContext a la aplicacion
             builder.Services.AddDbContext<RostrosFelicesContext>(options =>

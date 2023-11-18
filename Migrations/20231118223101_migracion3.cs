@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace RostrosFelices.Migrations
 {
     /// <inheritdoc />
-    public partial class migracion1 : Migration
+    public partial class migracion3 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,7 +34,6 @@ namespace RostrosFelices.Migrations
                     fecha = table.Column<DateTime>(type: "datetime2", nullable: false),
                     id_empleado = table.Column<int>(type: "int", nullable: false),
                     empleado = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    id_cliente = table.Column<int>(type: "int", nullable: false),
                     cliente = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     servicio = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
@@ -49,7 +48,7 @@ namespace RostrosFelices.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Nombre = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Password = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     ServicioId = table.Column<int>(type: "int", nullable: true)
@@ -57,8 +56,17 @@ namespace RostrosFelices.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Empleados", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Empleados_Servicios_ServicioId",
+                        column: x => x.ServicioId,
+                        principalTable: "Servicios",
+                        principalColumn: "Id");
                 });
 
+            migrationBuilder.CreateIndex(
+                name: "IX_Empleados_ServicioId",
+                table: "Empleados",
+                column: "ServicioId");
         }
 
         /// <inheritdoc />

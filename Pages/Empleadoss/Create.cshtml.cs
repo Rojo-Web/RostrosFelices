@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using RostrosFelices.Data;
@@ -5,6 +6,7 @@ using RostrosFelices.Modelos;
 
 namespace RostrosFelices.Pages.Empleadoss
 {
+    //[Authorize]
     public class CreateModel : PageModel
     {
         private readonly RostrosFelicesContext _context;

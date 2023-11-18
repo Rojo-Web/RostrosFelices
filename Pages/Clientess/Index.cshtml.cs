@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using RostrosFelices.Data;
 using RostrosFelices.Modelos;
 
-namespace RostrosFelices.Pages.Empleadoss
+namespace RostrosFelices.Pages.Clientess
 {
     [Authorize]
     public class IndexModel : PageModel
@@ -17,13 +17,13 @@ namespace RostrosFelices.Pages.Empleadoss
             _Context = context;
         }
 
-        public IList<Empleado> Empleados { get; set; } = default!;
+        public IList<Cliente> clientes { get; set; } = default!;
         public async Task OnGetAsync()
         {
 
             if (_Context.Empleados != null)
             {
-                Empleados = await _Context.Empleados.ToListAsync();
+                clientes = await _Context.Clientes.ToListAsync();
             }
 
         }

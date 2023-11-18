@@ -12,8 +12,8 @@ using RostrosFelices.Data;
 namespace RostrosFelices.Migrations
 {
     [DbContext(typeof(RostrosFelicesContext))]
-    [Migration("20231118195339_migracion1")]
-    partial class migracion1
+    [Migration("20231118223101_migracion3")]
+    partial class migracion3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,7 +59,6 @@ namespace RostrosFelices.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nombre")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Password")
@@ -94,9 +93,6 @@ namespace RostrosFelices.Migrations
 
                     b.Property<DateTime>("fecha")
                         .HasColumnType("datetime2");
-
-                    b.Property<int>("id_cliente")
-                        .HasColumnType("int");
 
                     b.Property<int>("id_empleado")
                         .HasColumnType("int");

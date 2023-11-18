@@ -7,7 +7,6 @@ namespace RostrosFelices.Modelos
         public int id { get; set; } //LLave primaria
 
         [Required]
-        [DataType(DataType.EmailAddress)]
         public string Nombre { get; set; }
         public string celular { get; set; }
         
