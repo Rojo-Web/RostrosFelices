@@ -6,7 +6,7 @@ using RostrosFelices.Modelos;
 
 namespace RostrosFelices.Pages.Empleadoss
 {
-    //[Authorize]
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly RostrosFelicesContext _context;
