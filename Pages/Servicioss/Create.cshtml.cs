@@ -81,11 +81,6 @@ namespace RostrosFelices.Pages.Servicioss
 
 
 
-            /*servicios_F.servicio = servicios.servicio;
-            servicios_F.fecha = servicios.fecha;
-            servicios_F.id_empleado = Convert.ToInt32(servicios.empleado.Substring(0,servicios.empleado.IndexOf('-')));
-            servicios_F.servicio = servicios.empleado.Substring(servicios.empleado.IndexOf('-'), servicios.empleado.IndexOf('.'));
-            servicios_F.cliente = servicios.cliente;*/
             _context.Servicios.Add(servicios_F);
 
 
