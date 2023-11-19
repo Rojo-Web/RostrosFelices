@@ -21,7 +21,7 @@ namespace RostrosFelices.Pages.Servicioss
         public async Task OnGetAsync()
         {
 
-            if (_Context.Empleados != null)
+            if (_Context.Servicios != null)
             {
                 Servicio = await _Context.Servicios.ToListAsync();
             }

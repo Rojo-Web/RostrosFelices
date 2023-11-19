@@ -1,0 +1,45 @@
+﻿@page
+@model RostrosFelices.Pages.Servicioss.EditModel
+@{
+    ViewData["Title"] = "Edit";
+
+}
+
+<h1>Edit</h1>
+
+<h4>Servicio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-denger"></div>
+            <input type="hidden" asp-for="Servicio.Id" />
+            <div class="form-group">
+                <label asp-for="Servicio.servicio" class="control-label"></label>
+                <input asp-for="Servicio.servicio" class="form-control" />
+                <span asp-validation-for="Servicio.servicio" class="text-denger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Servicio.fecha" class="control-label"></label>
+                <input asp-for="Servicio.fecha" class="form-control" />
+                <span asp-validation-for="Servicio.fecha" class="text-denger"></span>
+            </div>
+            <div asp-validation-summary="ModelOnly" class="text-denger"></div>
+            <input type="hidden" asp-for="Servicio.cliente" />
+            <div asp-validation-summary="ModelOnly" class="text-denger"></div>
+            <input type="hidden" asp-for="Servicio.id_empleado" />
+            <div asp-validation-summary="ModelOnly" class="text-denger"></div>
+            <input type="hidden" asp-for="Servicio.empleado" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-page="./Index" class="btn btn-primary">Back to list</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

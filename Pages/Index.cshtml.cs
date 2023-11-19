@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
+using RostrosFelices.Data;
+using RostrosFelices.Modelos;
 
 namespace RostrosFelices.Pages
 {
@@ -14,9 +17,6 @@ namespace RostrosFelices.Pages
             _logger = logger;
         }
 
-        public void OnGet()
-        {
 
-        }
     }
 }

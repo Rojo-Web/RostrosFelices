@@ -21,7 +21,7 @@ namespace RostrosFelices.Pages.Clientess
         public async Task OnGetAsync()
         {
 
-            if (_Context.Empleados != null)
+            if (_Context.Clientes != null)
             {
                 clientes = await _Context.Clientes.ToListAsync();
             }
